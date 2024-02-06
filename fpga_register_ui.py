@@ -139,7 +139,7 @@ class fpga_tools():
             self.open_register_config()
             
         def open_register_config(self):
-            reg_conf_path = os.getcwd() + '\\' + self.reg_conf_fname
+            reg_conf_path = os.getcwd() + '//' + self.reg_conf_fname
             config_tree = ET.parse(reg_conf_path)
             config_root = config_tree.getroot()
             print_tree = False

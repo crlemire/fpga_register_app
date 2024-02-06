@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<register_map>
+  <device>
+    <device_name>ENABLE</device_name>
+    <device_address>00</device_address>
+    <module>
+      <module_name>dac_controllers</module_name>
+      <bus_address>2</bus_address>
+        <register>
+          <register_name>CTRL_ENABLE_REG</register_name>
+          <module_address>000</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>DAC_CONTROLLERS_STATUS</field_name>
+            <field_base>e</field_base>
+            <start>0</start>
+            <stop>0</stop>
+            <encoded_pair><encoded_name>OFF</encoded_name><encoded_value>0</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>ON</encoded_name><encoded_value>1</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>1</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>DAC0_VALUE_REG</register_name>
+          <module_address>004</module_address>
+          <default_value>00000000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>DAC_VALUE</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>11</stop>
+          </field>
+          <field>
+            <field_name>DAC_COMMAND</field_name>
+            <field_base>e</field_base>
+            <start>12</start>
+            <stop>15</stop>
+            <encoded_pair><encoded_name>Load input register A; DAC registers unchanged.</encoded_name><encoded_value>0001</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register B; DAC registers unchanged.</encoded_name><encoded_value>0101</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register C; DAC registers unchanged.</encoded_name><encoded_value>1001</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register D; DAC registers unchanged.</encoded_name><encoded_value>1101</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register A; all DAC registers updated.</encoded_name><encoded_value>0011</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register B; all DAC registers updated.</encoded_name><encoded_value>0111</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register C; all DAC registers updated.</encoded_name><encoded_value>1011</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register D; all DAC registers updated.</encoded_name><encoded_value>1111</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Update all DAC registers from their respective input registers (startup).</encoded_name><encoded_value>0100</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load all DAC registers from shift register (startup).</encoded_name><encoded_value>1000</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Shutdown (provided PDL = 1)</encoded_name><encoded_value>1100</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>UPO goes low (default)</encoded_name><encoded_value>0010</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>UPO goes high</encoded_name><encoded_value>0110</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>No operation (NOP) to DAC registers</encoded_name><encoded_value>0000</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Mode 1, DOUT clocked out on SCLK’s rising edge. All DAC registers updated.</encoded_name><encoded_value>1110</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name> Mode 0, DOUT clocked out on SCLK’s falling edge. All DAC registers updated (default)</encoded_name><encoded_value>1010</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>16</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>DAC1_VALUE_REG</register_name>
+          <module_address>008</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>DAC_VALUE</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>11</stop>
+          </field>
+          <field>
+            <field_name>DAC_COMMAND</field_name>
+            <field_base>e</field_base>
+            <start>12</start>
+            <stop>15</stop>
+            <encoded_pair><encoded_name>Load input register A; DAC registers unchanged.</encoded_name><encoded_value>0001</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register B; DAC registers unchanged.</encoded_name><encoded_value>0101</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register C; DAC registers unchanged.</encoded_name><encoded_value>1001</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register D; DAC registers unchanged.</encoded_name><encoded_value>1101</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register A; all DAC registers updated.</encoded_name><encoded_value>0011</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register B; all DAC registers updated.</encoded_name><encoded_value>0111</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register C; all DAC registers updated.</encoded_name><encoded_value>1011</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load input register D; all DAC registers updated.</encoded_name><encoded_value>1111</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Update all DAC registers from their respective input registers (startup).</encoded_name><encoded_value>0100</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Load all DAC registers from shift register (startup).</encoded_name><encoded_value>1000</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Shutdown (provided PDL = 1)</encoded_name><encoded_value>1100</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>UPO goes low (default)</encoded_name><encoded_value>0010</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>UPO goes high</encoded_name><encoded_value>0110</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>No operation (NOP) to DAC registers</encoded_name><encoded_value>0000</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Mode 1, DOUT clocked out on SCLK’s rising edge. All DAC registers updated.</encoded_name><encoded_value>1110</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name> Mode 0, DOUT clocked out on SCLK’s falling edge. All DAC registers updated (default)</encoded_name><encoded_value>1010</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>16</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>DAC2_VALUE_REG</register_name>
+          <module_address>00C</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>DAC_VALUE</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>15</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>16</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>SPI_START_REG</register_name>
+          <module_address>00C</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>SPI_START_ALWAYS_0</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>0</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>1</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>VERSION_REG</register_name>
+          <module_address>00C</module_address>
+          <default_value>0001_0000</default_value>
+          <read_write>R/O</read_write>
+          <field>
+            <field_name>VERSION_MAJOR</field_name>
+            <field_base>16</field_base>
+            <start>16</start>
+            <stop>23</stop>
+          </field>
+          <field>
+            <field_name>VERSION_MINOR</field_name>
+            <field_base>16</field_base>
+            <start>8</start>
+            <stop>15</stop>
+          </field>
+          <field>
+            <field_name>VERSION_PATCH</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>7</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>24</start>
+            <stop>31</stop>
+          </field>
+        </register>
+    </module>
+    <module>
+      <module_name>pwm_controller</module_name>
+      <bus_address>3</bus_address>
+        <register>
+          <register_name>PWM_ENABLE_REG</register_name>
+          <module_address>000</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>PWM_CONTROLLERS_STATUS</field_name>
+            <field_base>e</field_base>
+            <start>0</start>
+            <stop>0</stop>
+            <encoded_pair><encoded_name>OFF</encoded_name><encoded_value>0</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>ON</encoded_name><encoded_value>1</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>1</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>PWM_DUTY_REG</register_name>
+          <module_address>004</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>PWM_DUTY</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>4</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>5</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>VERSION_REG</register_name>
+          <module_address>008</module_address>
+          <default_value>0001_0000</default_value>
+          <read_write>R/O</read_write>
+          <field>
+            <field_name>VERSION_MAJOR</field_name>
+            <field_base>16</field_base>
+            <start>16</start>
+            <stop>23</stop>
+          </field>
+          <field>
+            <field_name>VERSION_MINOR</field_name>
+            <field_base>16</field_base>
+            <start>8</start>
+            <stop>15</stop>
+          </field>
+          <field>
+            <field_name>VERSION_PATCH</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>7</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>24</start>
+            <stop>31</stop>
+          </field>
+        </register>
+    </module>
+    <module>
+      <module_name>mux_rf_cpu</module_name>
+      <bus_address>4</bus_address>
+        <register>
+          <register_name>MUX_EN_REG</register_name>
+          <module_address>000</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>MUX_CONTROLLER_STATUS</field_name>
+            <field_base>e</field_base>
+            <start>0</start>
+            <stop>0</stop>
+            <encoded_pair><encoded_name>OFF</encoded_name><encoded_value>0</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>ON</encoded_name><encoded_value>1</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>1</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>MUX_VALUE_REG</register_name>
+          <module_address>004</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>MUX_RFA_STATUS</field_name>
+            <field_base>e</field_base>
+            <start>0</start>
+            <stop>0</stop>
+            <encoded_pair><encoded_name>RFA Enabled  </encoded_name><encoded_value>0</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA Disabled </encoded_name><encoded_value>1</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>MUX_RFB_STATUS</field_name>
+            <field_base>e</field_base>
+            <start>1</start>
+            <stop>1</stop>
+            <encoded_pair><encoded_name>RFB Enabled  </encoded_name><encoded_value>0</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFB Disabled </encoded_name><encoded_value>1</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RF_MUX_ADDRESSING</field_name>
+            <field_base>e</field_base>
+            <start>2</start>
+            <stop>4</stop>
+            <encoded_pair><encoded_name>RFA: SR2 CUR   ,RFB: DC+ FB    </encoded_name><encoded_value>000</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA: SR1 CUR   ,RFB: FOCUS2 FB </encoded_name><encoded_value>001</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA: RF AMPL   ,RFB: +2.5 REF  </encoded_name><encoded_value>010</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA: PIR TEMP  ,RFB: DC- FB    </encoded_name><encoded_value>011</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA: PIR CORR  ,RFB: INT TEMP  </encoded_name><encoded_value>100</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA: GND       ,RFB: FOCUS1 FB </encoded_name><encoded_value>101</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA: PIR PRES  ,RFB: FILV      </encoded_name><encoded_value>110</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>RFA: DEGAS CUR ,RFB: PS VOLTS  </encoded_name><encoded_value>111</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>CPU_CH1_MUX_ADDRESSING</field_name>
+            <field_base>e</field_base>
+            <start>5</start>
+            <stop>6</stop>
+            <encoded_pair><encoded_name>Y: +2V ,X: +150mV  </encoded_name><encoded_value>00</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: GND ,X: GND     </encoded_name><encoded_value>01</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: +2V ,X: FAR DET </encoded_name><encoded_value>10</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: +2V ,X: +20mV   </encoded_name><encoded_value>11</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>CPU_CH2_MUX_ADDRESSING</field_name>
+            <field_base>e</field_base>
+            <start>7</start>
+            <stop>8</stop>
+            <encoded_pair><encoded_name>Y: +150mV ,X: +2V </encoded_name><encoded_value>00</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: GND    ,X: GND </encoded_name><encoded_value>01</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: BA DET ,X: +2V </encoded_name><encoded_value>10</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: +20mV  ,X: +2V </encoded_name><encoded_value>11</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>CPU_DAC_MUX_ADDRESSING</field_name>
+            <field_base>e</field_base>
+            <start>9</start>
+            <stop>10</stop>
+            <encoded_pair><encoded_name>Y: GND    ,X: BA DET  </encoded_name><encoded_value>00</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: AN IN- ,X: AN IN+  </encoded_name><encoded_value>01</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: GND    ,X: AN IN+  </encoded_name><encoded_value>10</encoded_value></encoded_pair>
+            <encoded_pair><encoded_name>Y: GND    ,X: FAR DET </encoded_name><encoded_value>11</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>11</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>VERSION_REG</register_name>
+          <module_address>008</module_address>
+          <default_value>0001_0000</default_value>
+          <read_write>R/O</read_write>
+          <field>
+            <field_name>VERSION_MAJOR</field_name>
+            <field_base>16</field_base>
+            <start>16</start>
+            <stop>23</stop>
+          </field>
+          <field>
+            <field_name>VERSION_MINOR</field_name>
+            <field_base>16</field_base>
+            <start>8</start>
+            <stop>15</stop>
+          </field>
+          <field>
+            <field_name>VERSION_PATCH</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>7</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED</field_name>
+            <field_base>16</field_base>
+            <start>24</start>
+            <stop>31</stop>
+          </field>
+        </register>
+    </module>
+    <module>
+      <module_name>adc_controller_cpu</module_name>
+      <bus_address>5</bus_address>
+        <register>
+          <register_name>ADC_ENABLE_REG</register_name>
+          <module_address>000</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/W</read_write>
+          <field>
+            <field_name>ADC_CONTROLLER_STATUS</field_name>
+            <field_base>e</field_base>
+            <start>0</start>
+            <stop>0</stop>
+            <encoded_pair><encoded_name>OFF</encoded_name><encoded_value>0</encoded_value> </encoded_pair>
+            <encoded_pair><encoded_name>ON</encoded_name><encoded_value>1</encoded_value></encoded_pair>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>1</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>ADC_VALUE_REG</register_name>
+          <module_address>004</module_address>
+          <default_value>0000_0000</default_value>
+          <read_write>R/O</read_write>
+          <field>
+            <field_name>ADC_VALUE</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>23</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>24</start>
+            <stop>31</stop>
+          </field>
+        </register>
+        <register>
+          <register_name>VERSION_REG</register_name>
+          <module_address>008</module_address>
+          <default_value>0001_0000</default_value>
+          <read_write>R/O</read_write>
+          <field>
+            <field_name>VERSION_MAJOR</field_name>
+            <field_base>16</field_base>
+            <start>16</start>
+            <stop>23</stop>
+          </field>
+          <field>
+            <field_name>VERSION_MINOR</field_name>
+            <field_base>16</field_base>
+            <start>8</start>
+            <stop>15</stop>
+          </field>
+          <field>
+            <field_name>VERSION_PATCH</field_name>
+            <field_base>16</field_base>
+            <start>0</start>
+            <stop>7</stop>
+          </field>
+          <field>
+            <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+            <field_base>x</field_base>
+            <start>24</start>
+            <stop>31</stop>
+          </field>
+        </register>
+    </module>
+    <module>
+      <module_name>dac_controller_cpu</module_name>
+      <bus_address>7</bus_address>
+      <register>
+        <register_name>DAC_ENABLE_REG</register_name>
+        <module_address>000</module_address>
+        <default_value>0000_0000</default_value>
+        <read_write>R/W</read_write>
+        <field>
+          <field_name>ADC_CPU_CONTROLLER_STATUS</field_name>
+          <field_base>e</field_base>
+          <start>0</start>
+          <stop>0</stop>
+          <encoded_pair><encoded_name>OFF</encoded_name><encoded_value>0</encoded_value></encoded_pair>
+          <encoded_pair><encoded_name>ON</encoded_name><encoded_value>1</encoded_value></encoded_pair>
+        </field>
+        <field>
+          <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+          <field_base>x</field_base>
+          <start>1</start>
+          <stop>31</stop>
+        </field>
+      </register>
+      <register>
+        <register_name>DAC_VALUE_REG</register_name>
+        <module_address>004</module_address>
+        <default_value>0000_0000</default_value>
+        <read_write>R/W</read_write>
+        <field>
+          <field_name>DAC_VALUE</field_name>
+          <field_base>16</field_base>
+          <start>0</start>
+          <stop>11</stop>
+        </field>
+        <field>
+          <field_name>DAC_COMMAND</field_name>
+          <field_base>e</field_base>
+          <start>12</start>
+          <stop>13</stop>
+          <encoded_pair><encoded_name>Load Serial Data Word to Register A and Register B 00 </encoded_name><encoded_value>00</encoded_value></encoded_pair>
+          <encoded_pair><encoded_name>Load Serial Data Word to Register A and Register B 01 </encoded_name><encoded_value>01</encoded_value></encoded_pair>
+          <encoded_pair><encoded_name>Load Serial Data Word to Rgeister A                   </encoded_name><encoded_value>10</encoded_value></encoded_pair>
+          <encoded_pair><encoded_name>Load Serial Data Word to Rgeister B                   </encoded_name><encoded_value>11</encoded_value></encoded_pair>
+        </field>
+        <field>
+          <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+          <field_base>x</field_base>
+          <start>14</start>
+          <stop>31</stop>
+        </field>
+      </register>
+      <register>
+        <register_name>VERSION_REG</register_name>
+        <module_address>008</module_address>
+        <default_value>0001_0000</default_value>
+        <read_write>R/O</read_write>
+        <field>
+          <field_name>VERSION_MAJOR</field_name>
+          <field_base>16</field_base>
+          <start>16</start>
+          <stop>23</stop>
+        </field>
+        <field>
+          <field_name>VERSION_MINOR</field_name>
+          <field_base>16</field_base>
+          <start>8</start>
+          <stop>15</stop>
+        </field>
+        <field>
+          <field_name>VERSION_PATCH</field_name>
+          <field_base>16</field_base>
+          <start>0</start>
+          <stop>7</stop>
+        </field>
+        <field>
+          <field_name>RESERVED/UNUSED_ALWAYS_0</field_name>
+          <field_base>x</field_base>
+          <start>24</start>
+          <stop>31</stop>
+        </field>
+      </register>
+    </module>
+  </device>
+</register_map>
